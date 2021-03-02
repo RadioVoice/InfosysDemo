@@ -1,0 +1,50 @@
+<div class="container">
+	<h1>
+	  Apply for a New Credit Card
+	</h1>
+	<form [formGroup]="angForm" novalidate>
+		  <div class="form-group">
+			  <label>Full Name:</label>
+			  <input class="form-control" formControlName="name" type="text">
+		  </div>
+		  <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+			  <div *ngIf="angForm.controls['name'].errors.required">
+				Full Name is Required!
+			  </div>
+		  </div>
+
+          <div class="form-group">
+            <label>Phone Number (use "-" in between):</label>
+            <input class="form-control" formControlName="number" type="text">
+        </div>
+        <div *ngIf="angForm.controls['number'].invalid && (angForm.controls['number'].dirty || angForm.controls['number'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['number'].errors.required">
+              Phone Number is Required!
+            </div>
+            <div *ngIf="angForm.controls['number'].errors.pattern">
+                Phone Number in incorrect format!Input as "XXX-XXX-XXXX"
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>SSN (use "-" in between):</label>
+            <input class="form-control" formControlName="ssn" type="text">
+        </div>
+        <div *ngIf="angForm.controls['ssn'].invalid && (angForm.controls['ssn'].dirty || angForm.controls['ssn'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['ssn'].errors.required">
+              SSN is Required!
+            </div>
+            <div *ngIf="angForm.controls['ssn'].errors.pattern">
+                SSN in incorrect format! Input as "XXX-XX-XXXX"
+            </div>
+        </div>
+
+		  <button type="submit"
+			  [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+			  Submit
+		  </button>
+	</form>
+	<br />
+	<p>For demo purposes only, reactive form status</p>
+	<p>Form status: {{ angForm.status | json }}</p>
+  </div>

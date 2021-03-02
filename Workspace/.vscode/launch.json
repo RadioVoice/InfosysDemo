@@ -1,0 +1,60 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch DemoDiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.example.demodiscoveryserver.DemoDiscoveryServerApplication"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoConfigApplication<demo-config>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ex.democonfig.DemoConfigApplication",
+            "projectName": "demo-config",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoStudentApplication<demo-student>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ex.demostudent.DemoStudentApplication",
+            "projectName": "demo-student",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoDiscoveryServerApplication<demo-discovery-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.demodiscoveryserver.DemoDiscoveryServerApplication",
+            "projectName": "demo-discovery-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoDiscoveryServerApplication<demo-discovery-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ex.demodiscoveryserver.DemoDiscoveryServerApplication",
+            "projectName": "demo-discovery-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoGatewayServerApplication<demo-gateway-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ex.demogatewayserver.DemoGatewayServerApplication",
+            "projectName": "demo-gateway-server",
+            "args": ""
+        }
+    ]
+}

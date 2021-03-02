@@ -1,0 +1,57 @@
+<div class="container">
+	<h1>
+	  Pay Using Credit Card
+	</h1>
+	<form [formGroup]="angForm" novalidate>
+		  <div class="form-group">
+			  <label>Card Number:</label>
+			  <input class="form-control" formControlName="cardNum" type="number">
+		  </div>
+		  <div *ngIf="angForm.controls['cardNum'].invalid && (angForm.controls['cardNum'].dirty || angForm.controls['cardNum'].touched)" class="alert alert-danger">
+			  <div *ngIf="angForm.controls['cardNum'].errors.required">
+				Card Number is Required!
+			  </div>
+		  </div>
+
+		   <div class="form-group">
+			  <label>Name on Card:</label>
+			  <input class="form-control" formControlName="cardName" type="text">
+		  </div>
+		  <div *ngIf="angForm.controls['cardName'].invalid && (angForm.controls['cardName'].dirty || angForm.controls['cardName'].touched)" class="alert alert-danger">
+			  <div *ngIf="angForm.controls['cardName'].errors.required">
+				Name on Card is Required!
+			  </div>
+		  </div>
+
+		  <div class="form-group">
+			<label>Expiration Date:</label>
+			<input class="form-control" formControlName="expDate" type="month">
+		</div>
+		<div *ngIf="angForm.controls['expDate'].invalid && (angForm.controls['expDate'].dirty || angForm.controls['expDate'].touched)" class="alert alert-danger">
+			<div *ngIf="angForm.controls['expDate'].errors.required">
+			  Expiration Date is Required!
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>CVV:</label>
+			<input class="form-control" formControlName="cvv" type="text" maxlength="4">
+		</div>
+		<div *ngIf="angForm.controls['cvv'].invalid && (angForm.controls['cvv'].dirty || angForm.controls['cvv'].touched)" class="alert alert-danger">
+			<div *ngIf="angForm.controls['cvv'].errors.required">
+			  CVV is Required!
+			</div>
+			<div *ngIf="angForm.controls['cvv'].errors.minlength">
+                CVV must be a 3 or 4 digit code, found on the back of the card.
+            </div>
+		</div>
+
+		  <button type="submit"
+			  [disabled]="angForm.pristine || angForm.invalid" class="btn btn-success">
+			  Submit
+		  </button>
+	</form>
+	<br />
+	<p>For demo purposes only, reactive form status</p>
+	<p>Form status: {{ angForm.status | json }}</p>
+  </div>
